@@ -1,14 +1,14 @@
+require: rubocop-jekyll
+
 inherit_gem:
-  jekyll: .rubocop.yml
+  rubocop-jekyll: .rubocop.yml
 
 AllCops:
-  TargetRubyVersion: 2.3
-  Include:
-    - report
-    - github/jwt
+  TargetRubyVersion: 2.5
   Exclude:
     - sites/**/*
     - vendor/**/*
+    - Gemfile
 
 Jekyll/NoPutsAllowed:
   Enabled: false

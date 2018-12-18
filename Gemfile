@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 repo = ENV.fetch("REPO", "https://github.com/jekyll/jekyll.git")
@@ -5,7 +7,7 @@ repo = ENV.fetch("REPO", "https://github.com/jekyll/jekyll.git")
 if ENV["REF"]
   gem "jekyll", git: repo, ref: ENV["REF"]
 elsif ENV["PR"]
-  gem "jekyll", git: repo, ref: "refs/pull/#{ENV['PR']}/head"
+  gem "jekyll", git: repo, ref: "refs/pull/#{ENV["PR"]}/head"
 else
   gem "jekyll", git: repo, branch: "master"
 end
@@ -63,5 +65,5 @@ gem "redcarpet"
 gem "uswds-jekyll"
 
 group :dev do
-  gem "rubocop", "~> 0.61.0"
+  gem "rubocop-jekyll", "~> 0.4"
 end
